@@ -1,43 +1,43 @@
 # FastAPI Boilerplate
 
-Estrutura base para projetos backend Python com FastAPI, seguindo arquitetura em camadas.
+Base structure for Python backend projects with FastAPI, following a layered architecture.
 
 ## Stack
 
-- **FastAPI** — Framework web
+- **FastAPI** — Web framework
 - **SQLAlchemy 2.0 async** — ORM
-- **PostgreSQL** — Banco de dados
-- **Pydantic v2** — Validação e schemas
-- **Alembic** — Migrações
-- **pytest** — Testes
+- **PostgreSQL** — Database
+- **Pydantic v2** — Validation and schemas
+- **Alembic** — Migrations
+- **pytest** — Tests
 
-## Arquitetura
+## Architecture
 
 ```
 app/
-  api/v1/endpoints/   # Routers — só recebe request e delega
-  core/               # Config, segurança, startup
+  api/v1/endpoints/   # Routers — only receives requests and delegates
+  core/               # Config, security, startup
   models/             # ORM models (SQLAlchemy)
-  schemas/            # Schemas de request/response (Pydantic)
-  services/           # Regras de negócio
-  repositories/       # Acesso ao banco
-  utils/              # Helpers reutilizáveis
+  schemas/            # Request/response schemas (Pydantic)
+  services/           # Business logic
+  repositories/       # Database access
+  utils/              # Reusable helpers
 tests/
-  unit/               # Testa services isolados (sem DB)
-  integration/        # Testa endpoints com DB real
+  unit/               # Tests services in isolation (no DB)
+  integration/        # Tests endpoints with a real DB
 ```
 
-## Como rodar
+## How to run
 
 ```bash
 cp .env.example .env
 docker compose up
 ```
 
-API disponível em `http://localhost:8000`  
-Docs em `http://localhost:8000/docs`
+API available at `http://localhost:8000`  
+Docs at `http://localhost:8000/docs`
 
-## Testes
+## Tests
 
 ```bash
 pip install -r requirements.txt
