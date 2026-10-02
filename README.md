@@ -1,45 +1,45 @@
-# FastAPI Boilerplate
+Шаблон проекта на FastAPI
 
-Base structure for Python backend projects with FastAPI, following a layered architecture.
+Базовая структура для Python backend-проектов на FastAPI, построенная по слоистой архитектуре.
+Стек
 
-## Stack
+    FastAPI — веб-фреймворк
 
-- **FastAPI** — Web framework
-- **SQLAlchemy 2.0 async** — ORM
-- **PostgreSQL** — Database
-- **Pydantic v2** — Validation and schemas
-- **Alembic** — Migrations
-- **pytest** — Tests
+    SQLAlchemy 2.0 async — ORM
 
-## Architecture
+    PostgreSQL — база данных
 
-```
+    Pydantic v2 — валидация и схемы
+
+    Alembic — миграции
+
+    pytest — тесты
+
+Архитектура
+text
+
 app/
-  api/v1/endpoints/   # Routers — only receives requests and delegates
-  core/               # Config, security, startup
-  models/             # ORM models (SQLAlchemy)
-  schemas/            # Request/response schemas (Pydantic)
-  services/           # Business logic
-  repositories/       # Database access
-  utils/              # Reusable helpers
+  api/v1/endpoints/   # Роутеры — только принимают запросы и делегируют
+  core/               # Конфигурация, безопасность, запуск
+  models/             # ORM-модели (SQLAlchemy)
+  schemas/            # Схемы запросов/ответов (Pydantic)
+  services/           # Бизнес-логика
+  repositories/       # Доступ к базе данных
+  utils/              # Переиспользуемые вспомогательные функции
 tests/
-  unit/               # Tests services in isolation (no DB)
-  integration/        # Tests endpoints with a real DB
-```
+  unit/               # Тестируют сервисы изолированно (без БД)
+  integration/        # Тестируют эндпоинты с реальной БД
 
-## How to run
+Как запустить
+bash
 
-```bash
 cp .env.example .env
 docker compose up
-```
 
-API available at `http://localhost:8000`  
-Docs at `http://localhost:8000/docs`
+API доступен по адресу http://localhost:8000
+Документация по адресу http://localhost:8000/docs
+Тесты
+bash
 
-## Tests
-
-```bash
 pip install -r requirements.txt
 pytest tests/
-```

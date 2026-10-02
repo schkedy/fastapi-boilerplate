@@ -4,7 +4,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - .env
+      - .env.docker
     depends_on:
       - db
     volumes:
@@ -15,9 +15,9 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: dbname
+      POSTGRES_DB: db
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

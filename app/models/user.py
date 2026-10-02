@@ -1,10 +1,6 @@
 from sqlalchemy import Boolean, Column, Integer, String
-from sqlalchemy.orm import DeclarativeBase
 
-
-class Base(DeclarativeBase):
-    pass
-
+from app.models.base import Base
 
 class User(Base):
     __tablename__ = "users"
